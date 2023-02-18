@@ -331,8 +331,8 @@ class CalcController {
   initButtonsEvents() {
     let buttons = document.querySelectorAll("#buttons > g, #parts > g");
 
-    this.addEventListenerAll(btn, "click drag", (e) => {
-      btn.addEventListener("click", (e) => {
+    buttons.forEach((btn, index) => {
+      this.addEventListenerAll(btn, "click drag", (e) => {
         let textBtn = btn.className.baseVal.replace("btn-", "");
 
         this.execBtn(textBtn);
